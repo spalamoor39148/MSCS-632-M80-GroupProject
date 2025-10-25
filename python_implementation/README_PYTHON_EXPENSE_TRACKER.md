@@ -36,7 +36,7 @@ This is a menu-driven CLI expense tracker for Python. It supports adding, viewin
 ## File Import Format
 
 - **CSV/JSON:** Must have columns/fields: `date`, `amount`, `category`, `description`.
-- **Sample files:** See `input_data_samples/expenses_sample.csv` and `expenses_sample.json` for valid examples.
+- **Sample files:** See `python_implementation/input_data_samples/expenses_sample.csv` and `python_implementation/input_data_samples/expenses_sample.json` for valid examples.
 
 ## Installation & Setup
 
