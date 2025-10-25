@@ -7,7 +7,7 @@ This is a menu-driven CLI expense tracker for C++. It supports adding, viewing, 
 
 ## Directory Structure
 
-- `expense_tracker_src/` — All C++ source files, Makefile, and persistent data files (e.g., `expenses_persistent.csv`).
+- `expense_tracker_src/` — All C++ source files, Makefile, and persistent data files (e.g., `expenses_persistent.csv`, `expenses_persistent.json`).
 - `input_data_samples/` — Sample CSV/JSON files for preloading/demo only. Not used for ongoing persistence unless explicitly chosen.
 - `tests/` — C++ test file (`test_expense_tracker.cpp`), test binary, and `json.hpp`.
 
@@ -20,9 +20,9 @@ This is a menu-driven CLI expense tracker for C++. It supports adding, viewing, 
 - **Filter by Date Range:** Enter start and end dates (YYYY-MM-DD) to view matching expenses.
 - **Summary Report:** See total expenses and subtotals for each category.
 - **Persistence:**
-  - The app automatically loads from `expenses_persistent.csv` or `expenses_persistent.json` (if present) on startup. If neither exists, you start with an empty list.
+  - The app automatically loads from `expense_tracker_src/expenses_persistent.csv` or `expense_tracker_src/expenses_persistent.json` (if present) on startup. If neither exists, you start with an empty list.
   - All changes (add/delete) are auto-saved to the last-used persistent file (CSV or JSON) in `expense_tracker_src/`.
-  - You can explicitly save/load to any file (CSV/JSON) via the menu. The current file is always shown when viewing expenses.
+  - You can explicitly save/load to any file (CSV/JSON) via the menu.
   - Preload/sample files (`input_data_samples/expenses.csv`, `input_data_samples/expenses.json`) are for demo/preloading only and are never overwritten unless you explicitly save to them.
 - **Sample Preload:**
   - The files in `input_data_samples/` are sample data. You can load them at any time to quickly populate the tracker, but they are not used for ongoing persistence unless you explicitly choose to save to them.
