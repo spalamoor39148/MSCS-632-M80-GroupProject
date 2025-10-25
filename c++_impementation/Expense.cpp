@@ -17,26 +17,38 @@ int nextID = 1;
 void addExpense(std::vector<Expense> &expenses) {
     Expense e;
     e.id = nextID++;
-    std::cout << "Enter date (YYYY-MM-DD): ";
-    std::getline(std::cin, e.date);
+    // Date validation
+    do {
+        std::cout << "Enter date (YYYY-MM-DD): ";
+        std::getline(std::cin, e.date);
+        if (!isValidDate(e.date)) {
+            std::cout << "❌ Invalid date format or value. Please enter a valid date in YYYY-MM-DD format.\n";
+        }
+    } while (!isValidDate(e.date));
 
-    std::cout << "Enter amount: ";
-    std::cin >> e.amount;
-    std::cin.ignore();
+    // Amount validation
+    std::string amountStr;
+    do {
+        std::cout << "Enter amount: ";
+        std::getline(std::cin, amountStr);
+        if (!isValidAmount(amountStr)) {
+            std::cout << "❌ Invalid amount. Please enter a positive number.\n";
+        }
+    } while (!isValidAmount(amountStr));
+    e.amount = std::stod(amountStr);
 
-    int catChoice;
+    // Category validation (robust, string input)
+    int catChoice = 0;
+    std::string catInput;
     displayCategories();
-    std::cout << "Select category by number (1–7): ";
-    std::cin >> catChoice;
-    std::cin.ignore();
-
-    e.category = getCategoryByNumber(catChoice);
-    while (e.category.empty()) {
-        std::cout << "Invalid number. Please select 1–7: ";
-        std::cin >> catChoice;
-        std::cin.ignore();
-        e.category = getCategoryByNumber(catChoice);
+    while (true) {
+        std::cout << "Select category by number (1–7): ";
+        std::getline(std::cin, catInput);
+        std::stringstream ss(catInput);
+        if (ss >> catChoice && catChoice >= 1 && catChoice <= 7) break;
+        std::cout << "Invalid number. Please select 1–7.\n";
     }
+    e.category = getCategoryByNumber(catChoice);
 
     std::cout << "Enter description: ";
     std::getline(std::cin, e.description);
@@ -49,18 +61,17 @@ void addExpense(std::vector<Expense> &expenses) {
  * @brief Display all expenses in a formatted table with IDs, dates, amounts, categories, and descriptions.
  * @param expenses Const reference to the vector of all expenses.
  */
-void viewExpenses(const std::vector<Expense> &expenses) {
+void viewExpenses(const std::vector<Expense> &expenses, const std::string &currentDataFile) {
     if (expenses.empty()) {
         std::cout << "No expenses found.\n";
         return;
     }
-
     std::cout << "\n---------------- ALL EXPENSES ----------------\n";
+    std::cout << "(Current data file: " << currentDataFile << ")\n";
     std::cout << std::left << std::setw(5) << "ID" << std::setw(12) << "Date"
               << std::setw(12) << "Amount" << std::setw(25) << "Category"
               << "Description\n";
     std::cout << "---------------------------------------------------------------\n";
-
     for (const auto &e : expenses) {
         std::cout << std::left << std::setw(5) << e.id
                   << std::setw(12) << e.date
@@ -79,14 +90,17 @@ void deleteExpense(std::vector<Expense> &expenses) {
         std::cout << "No expenses to delete.\n";
         return;
     }
-
-    int id;
-    std::cout << "Enter Expense ID to delete: ";
-    std::cin >> id;
-
+    std::string idInput;
+    int id = 0;
+    while (true) {
+        std::cout << "Enter Expense ID to delete: ";
+        std::getline(std::cin, idInput);
+        std::stringstream ss(idInput);
+        if (ss >> id && id > 0) break;
+        std::cout << "Invalid ID. Please enter a positive number.\n";
+    }
     auto it = std::find_if(expenses.begin(), expenses.end(),
                            [id](const Expense &e) { return e.id == id; });
-
     if (it != expenses.end()) {
         expenses.erase(it);
         std::cout << "✅ Expense with ID " << id << " deleted successfully.\n";
@@ -104,19 +118,21 @@ void filterByCategory(const std::vector<Expense> &expenses) {
         std::cout << "No expenses available.\n";
         return;
     }
-
-    int catChoice;
+    int catChoice = 0;
+    std::string catInput;
     displayCategories();
-    std::cout << "Select category number to filter: ";
-    std::cin >> catChoice;
-    std::cin.ignore();
-
+    while (true) {
+        std::cout << "Select category number to filter: ";
+        std::getline(std::cin, catInput);
+        std::stringstream ss(catInput);
+        if (ss >> catChoice && catChoice >= 1 && catChoice <= 7) break;
+        std::cout << "Invalid number. Please select 1–7.\n";
+    }
     std::string cat = getCategoryByNumber(catChoice);
     if (cat.empty()) {
         std::cout << "Invalid selection.\n";
         return;
     }
-
     std::cout << "\nExpenses in category: " << cat << "\n";
     bool found = false;
     for (const auto &e : expenses) {
@@ -140,16 +156,23 @@ void filterByDateRange(const std::vector<Expense> &expenses) {
         std::cout << "No expenses available.\n";
         return;
     }
-
     std::string start, end;
-    std::cout << "Enter start date (YYYY-MM-DD): ";
-    std::getline(std::cin, start);
-    std::cout << "Enter end date (YYYY-MM-DD): ";
-    std::getline(std::cin, end);
-
+    do {
+        std::cout << "Enter start date (YYYY-MM-DD): ";
+        std::getline(std::cin, start);
+        if (!isValidDate(start)) {
+            std::cout << "❌ Invalid date format or value. Please enter a valid date in YYYY-MM-DD format.\n";
+        }
+    } while (!isValidDate(start));
+    do {
+        std::cout << "Enter end date (YYYY-MM-DD): ";
+        std::getline(std::cin, end);
+        if (!isValidDate(end)) {
+            std::cout << "❌ Invalid date format or value. Please enter a valid date in YYYY-MM-DD format.\n";
+        }
+    } while (!isValidDate(end));
     time_t startTime = parseDate(start);
     time_t endTime = parseDate(end);
-
     std::cout << "\nExpenses between " << start << " and " << end << ":\n";
     bool found = false;
     for (const auto &e : expenses) {
