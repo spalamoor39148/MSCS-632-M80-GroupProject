@@ -14,7 +14,7 @@ This is a menu-driven CLI expense tracker for C++. It supports adding, viewing, 
 ## Features
 
 - **Add Expense:** Enter date (YYYY-MM-DD), amount, select category from a numbered list, and description. All fields are validated.
-- **View All Expenses:** See all expenses in a table with IDs, dates, amounts, categories, and descriptions. The current data file (persistent or sample) is always shown.
+- **View All Expenses:** See all expenses in a table with IDs, dates, amounts, categories, and descriptions.
 - **Delete Expense by ID:** Remove an expense by its displayed ID.
 - **Filter by Category:** Select a category by number to view only those expenses.
 - **Filter by Date Range:** Enter start and end dates (YYYY-MM-DD) to view matching expenses.
