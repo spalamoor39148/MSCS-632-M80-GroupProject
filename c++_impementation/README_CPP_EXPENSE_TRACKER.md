@@ -63,6 +63,12 @@ This is a menu-driven CLI expense tracker for C++. It supports adding, viewing, 
 
 2. Ensure you have a C++17 compiler (e.g., g++ on macOS) and the header-only [nlohmann/json](https://github.com/nlohmann/json) (included in the `tests/` folder as `json.hpp`).
 
+## Dependencies
+
+- **Compiler:** C++17 compatible (e.g., g++ 7+)
+- **nlohmann/json:** Header-only JSON library (included as `json.hpp` in `expense_tracker_src/`)
+- **Build Tools:** `make` (recommended, or build manually with g++)
+
 ## Running the App
 
 From the `expense_tracker_src/` directory, run:

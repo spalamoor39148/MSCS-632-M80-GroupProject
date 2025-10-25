@@ -23,6 +23,36 @@ This project is a cross-language CLI Expense Tracker implemented in both Python 
 
 ---
 
+## Installation
+
+### C++ Dependencies
+- **Homebrew** (macOS):
+  ```zsh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+- **g++ (C++17+) and make:**
+  ```zsh
+  brew install gcc make
+  ```
+  (Or use your system's package manager if not on macOS.)
+- **nlohmann/json:** Already included as `json.hpp` in the source directory.
+
+### Python Dependencies
+- **Python 3.7+** (install via Homebrew if needed):
+  ```zsh
+  brew install python
+  ```
+- **pip** (Python package manager):
+  ```zsh
+  python3 -m ensurepip --upgrade
+  ```
+- **pytest** (for testing):
+  ```zsh
+  python3 -m pip install --upgrade pip pytest
+  ```
+
+---
+
 ## Directory Structure
 - `c++_impementation/expense_tracker_src/` — C++ source, Makefile, persistent data, and binary.
 - `c++_impementation/input_data_samples/` — C++ sample data for preloading/demo only.

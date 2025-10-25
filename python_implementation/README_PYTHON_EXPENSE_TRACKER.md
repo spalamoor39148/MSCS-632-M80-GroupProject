@@ -60,6 +60,19 @@ This is a menu-driven CLI expense tracker for Python. It supports adding, viewin
    pip install pytest
    ```
 
+## Dependencies
+
+- **Python 3.7+**
+- **pip** (Python package manager)
+- **Required packages:**
+  - `pytest` (for testing)
+  - No external packages required for running the CLI app itself (uses only Python standard library)
+
+#### To install Python dependencies:
+```zsh
+python3 -m pip install pytest
+```
+
 ## Running the App
 
 From the `python_implementation` directory, run:
