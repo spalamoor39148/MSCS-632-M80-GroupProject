@@ -1,0 +1,18 @@
+ID,Date,Amount,Category,Description
+1,2025-10-01,1250.00,Housing,Monthly Rent Payment
+2,2025-10-03,45.25,Transportation,Gas Refill for Car
+3,2025-10-04,65.90,Food & Dining,Weekend Groceries at Walmart
+4,2025-10-06,89.99,Utilities & Communication,Internet and Mobile Bill
+5,2025-10-08,230.50,Healthcare & Insurance,Dental Checkup
+6,2025-10-10,120.00,Personal & Debt,Credit Card Payment
+7,2025-10-12,22.50,Food & Dining,Lunch with Friends
+8,2025-10-14,350.00,Housing,Maintenance and Repairs
+9,2025-10-15,95.30,Utilities & Communication,Electricity Bill
+10,2025-10-16,48.75,Other,Gift Purchase
+11,2025-10-18,180.00,Healthcare & Insurance,Pharmacy Medicines
+12,2025-10-19,110.45,Personal & Debt,Loan EMI Payment
+13,2025-10-21,72.90,Food & Dining,Dinner at Olive Garden
+14,2025-10-22,25.00,Transportation,Parking Fee
+15,2025-10-23,140.00,Housing,Home Cleaning Services
+16,2025-10-24,99.99,Utilities & Communication,Cable Subscription Renewal
+17,2025-10-25,18.00,Other,Streaming Service Subscription
