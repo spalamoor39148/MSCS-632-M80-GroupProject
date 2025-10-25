@@ -4,9 +4,32 @@
 #include "Expense.h"
 #include <vector>
 
+/**
+ * @brief Saves the list of expenses to a CSV file.
+ *
+ * @param expenses The vector of Expense objects to be saved.
+ */
 void saveExpensesCSV(const std::vector<Expense> &expenses);
+
+/**
+ * @brief Loads expenses from a CSV file into the provided vector.
+ *
+ * @param expenses The vector to populate with loaded Expense objects.
+ */
 void loadExpensesCSV(std::vector<Expense> &expenses);
+
+/**
+ * @brief Saves the list of expenses to a JSON file.
+ *
+ * @param expenses The vector of Expense objects to be saved.
+ */
 void saveExpensesJSON(const std::vector<Expense> &expenses);
+
+/**
+ * @brief Loads expenses from a JSON file into the provided vector.
+ *
+ * @param expenses The vector to populate with loaded Expense objects.
+ */
 void loadExpensesJSON(std::vector<Expense> &expenses);
 
 #endif

@@ -4,6 +4,15 @@
 #include <vector>
 #include <iostream>
 
+/**
+ * @brief Entry point for the Expense Tracker CLI application.
+ *
+ * Initializes the main expense list and handles the main menu loop.
+ * Presents the user with all available options and dispatches to the appropriate
+ * function for each menu choice. Handles input validation for menu selection.
+ *
+ * @return int Exit status code (0 for success).
+ */
 int main() {
     std::vector<Expense> expenses;
     int choice;

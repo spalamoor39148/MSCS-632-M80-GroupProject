@@ -6,8 +6,13 @@
 
 using json = nlohmann::json;
 
+// Global variable for unique expense IDs (defined elsewhere)
 extern int nextID;
 
+/**
+ * @brief Save all expenses to a CSV file (expenses.csv).
+ * @param expenses Const reference to the vector of all expenses.
+ */
 void saveExpensesCSV(const std::vector<Expense> &expenses) {
     std::ofstream out("expenses.csv");
     out << "ID,Date,Amount,Category,Description\n";
@@ -19,6 +24,11 @@ void saveExpensesCSV(const std::vector<Expense> &expenses) {
     std::cout << "✅ Expenses saved to expenses.csv\n";
 }
 
+/**
+ * @brief Load expenses from a CSV file (expenses.csv) into the expenses vector.
+ *        Updates nextID to ensure unique IDs for new expenses.
+ * @param expenses Reference to the vector of all expenses.
+ */
 void loadExpensesCSV(std::vector<Expense> &expenses) {
     std::ifstream in("expenses.csv");
     if (!in.is_open()) {
@@ -49,6 +59,10 @@ void loadExpensesCSV(std::vector<Expense> &expenses) {
     std::cout << "✅ Expenses loaded from expenses.csv\n";
 }
 
+/**
+ * @brief Save all expenses to a JSON file (expenses.json) using nlohmann::json.
+ * @param expenses Const reference to the vector of all expenses.
+ */
 void saveExpensesJSON(const std::vector<Expense> &expenses) {
     json jExpenses = json::array();
     for (const auto &e : expenses) {
@@ -66,6 +80,11 @@ void saveExpensesJSON(const std::vector<Expense> &expenses) {
     std::cout << "✅ Expenses saved to expenses.json\n";
 }
 
+/**
+ * @brief Load expenses from a JSON file (expenses.json) into the expenses vector.
+ *        Updates nextID to ensure unique IDs for new expenses.
+ * @param expenses Reference to the vector of all expenses.
+ */
 void loadExpensesJSON(std::vector<Expense> &expenses) {
     std::ifstream file("expenses.json");
     if (!file.is_open()) {
