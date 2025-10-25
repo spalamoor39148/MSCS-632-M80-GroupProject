@@ -43,7 +43,7 @@ This is a menu-driven CLI expense tracker for Python. It supports adding, viewin
 1. Clone the repository and navigate to the Python implementation:
 
    ```zsh
-   git clone MSCS-632-M80-GroupProject
+   git clone https://github.com/spalamoor39148/MSCS-632-M80-GroupProject.git
    cd MSCS-632-M80-GroupProject/python_implementation
    ```
 
