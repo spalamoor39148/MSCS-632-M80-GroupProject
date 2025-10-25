@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "date": "2025-10-01",
+    "amount": 1200.00,
+    "category": "Housing",
+    "description": "October Rent"
+  },
+  {
+    "id": 2,
+    "date": "2025-10-03",
+    "amount": 45.50,
+    "category": "Transportation",
+    "description": "Gas refill"
+  },
+  {
+    "id": 3,
+    "date": "2025-10-04",
+    "amount": 15.75,
+    "category": "Food & Dining",
+    "description": "Lunch with friends"
+  },
+  {
+    "id": 4,
+    "date": "2025-10-06",
+    "amount": 89.90,
+    "category": "Utilities & Communication",
+    "description": "Internet bill"
+  },
+  {
+    "id": 5,
+    "date": "2025-10-10",
+    "amount": 200.00,
+    "category": "Healthcare & Insurance",
+    "description": "Dentist appointment"
+  },
+  {
+    "id": 6,
+    "date": "2025-10-12",
+    "amount": 60.00,
+    "category": "Personal & Debt",
+    "description": "Gym membership"
+  },
+  {
+    "id": 7,
+    "date": "2025-10-14",
+    "amount": 30.00,
+    "category": "Other",
+    "description": "Gift for coworker"
+  }
+]
