@@ -1,4 +1,4 @@
-# Expense Tracker
+# Expense Tracker (Python Implementation)
 
 ## Oishani Ganguly, Sri Sai Palamoor
 
