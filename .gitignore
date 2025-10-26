@@ -46,14 +46,3 @@ venv.bak/
 *.sqlite3
 *.db
 *.log
-
-# Project-specific
-python_implementation/expenses.json
-*.csv
-*.json
-!input_data_samples/*.csv
-!input_data_samples/*.json
-
-# Ignore PDF deliverables
-*.pdf
-!deliverable_reports/*.pdf
